@@ -32,4 +32,4 @@ En cada componente que querramos utilizar botones tenemos que importar el modulo
 
 ![alt text](md/ngzorro-import-module.png)
 
-Luego se podra copiar el ejemplo de la pagina en el proyecto local
+Luego se podra copiar el ejemplo de la pagina en el proyecto local.
