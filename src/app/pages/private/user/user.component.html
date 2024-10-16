@@ -1,0 +1,53 @@
+<div class="btn-wrappers" nz-flex nzJustify="center" nzAlign="flex-start">
+
+    
+        <div nz-row nzJustify="center">
+
+            <div nz-col nzXs="24" nzMd="24" nzLg="24" nzXl="12">
+                <nz-card nzTitle="User" [nzHoverable]="true">
+                
+
+                <nz-table #fixedTable [nzData]="data" [nzFrontPagination]="false" [nzShowPagination]="false">
+                    <thead>
+                        <tr>
+                            <th nzLeft>ID</th>
+                            <th nzLeft>Fisrtname</th>
+
+                            <th nzLeft>Lastname</th>
+
+                            <th nzRight>
+                                <a nz-button nzType="link" nzTooltipTitle="Crear" nzTooltipPlacement="top" nz-tooltip>
+                                    <span nz-icon nzType="plus-circle" nzTheme="outline"></span>
+                                </a>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @for (data of data; track data._id) {
+                        <tr>
+                            <td nzLeft> {{data._id }}</td>
+                            <td nzLeft> {{data.firtname }}</td>
+                            <td nzLeft> {{data.lastname }}</td>
+                            <td nzRight>
+                                <a nz-button nzType="link" nzTooltipTitle="Editar" nzTooltipPlacement="top" nz-tooltip>
+                                    <span nz-icon nzType="edit" nzTheme="outline"></span>
+                                </a>
+                                <a nz-button nzType="link" nzTooltipTitle="Eliminar" nzTooltipPlacement="top"
+                                    nz-tooltip>
+                                    <span nz-icon nzType="delete" nzTheme="outline"></span>
+                                </a>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </nz-table>
+                @if(paginate){
+                    <nz-pagination style="text-align: right; margin:10px" [nzPageIndex]="paginate.page+1"
+                        [nzTotal]="paginate.total"></nz-pagination>
+                    }
+            </nz-card>
+            </div>
+        </div>
+
+</div>

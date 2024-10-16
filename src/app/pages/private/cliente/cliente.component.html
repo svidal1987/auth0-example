@@ -1,1 +1,25 @@
-<p>cliente works!</p>
+<nz-table #fixedTable [nzData]="data" >
+    <thead>
+      <tr>
+        <th nzLeft>ID</th>
+        <th nzLeft>Fisrtname</th>
+        
+        <th nzLeft>Lastname</th>
+
+        <th nzRight>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    @for (data of data; track data._id) {
+        <tr>
+            <td nzLeft> {{data._id }}</td>
+            <td nzLeft> {{data.firtname }}</td>
+            <td nzLeft> {{data.lastname }}</td>
+            <td nzRight>
+                <a>action</a>
+              </td>
+            </tr>
+    }
+</tbody>
+</nz-table>

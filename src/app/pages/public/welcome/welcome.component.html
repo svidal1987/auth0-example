@@ -1,18 +1,29 @@
-<p>welcome works!</p>
-@if (auth.user$ | async; as user) {
-    <ul >
-      <li>{{ user.name }}</li>
-      <li>{{ user.email }}</li>
-    </ul>
 
-    
-    <button (click)="logout()">
-        Log out
-    </button>
-  }@else{
-    No existe un usuario logeado
-    <button (click)="login()">Log in</button>
-  }
-  
-  
-  
+<div
+class="btn-wrappers"
+nz-flex
+nzJustify="center"
+nzAlign="flex-start"
+>
+
+  <nz-card style="max-width:600px;" [nzTitle]="title"  [nzActions]="[actionSetting]" [nzHoverable]="true" >
+    {{message}}
+  </nz-card>
+  <ng-template #extraTemplate>
+
+  </ng-template>
+
+
+
+  <ng-template #actionSetting>
+    @if (auth.user$ | async; as user) {
+      <button nz-button nzType="primary" nzShape="round" (click)="logout()"><span nz-icon nzType="logout" nzTheme="outline"></span>Logout</button>
+    }@else{
+      <button nz-button nzType="primary" nzShape="round" (click)="login()"><span nz-icon nzType="login" nzTheme="outline"></span>Login</button>  
+      
+    }
+  </ng-template>
+
+</div>
+
+
