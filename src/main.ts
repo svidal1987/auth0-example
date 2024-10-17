@@ -14,6 +14,7 @@ import { routes } from './app/app.routes';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { NzConfig, provideNzConfig } from 'ng-zorro-antd/core/config';
 import { provideAnimations, provideNoopAnimations } from '@angular/platform-browser/animations';
+import { es_ES, provideNzI18n } from 'ng-zorro-antd/i18n';
 const ngZorroConfig: NzConfig = {
   message: { nzTop: 120 },
   notification: { nzTop: 240 },
@@ -34,6 +35,7 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes),
     provideAnimations(),
     provideNoopAnimations(),
+    provideNzI18n(es_ES)
   ]
 });
 
