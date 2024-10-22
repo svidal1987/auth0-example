@@ -7,4 +7,5 @@ export const routes: Routes = [
     { path: 'error', loadChildren: () => import('./pages/public/error/error.routes').then(m => m.ERROR_ROUTES) },
     { path: 'cliente', loadChildren: () => import('./pages/private/cliente/cliente.routes').then(m => m.CLIENTE_ROUTES) },
     { path: 'user', loadChildren: () => import('./pages/private/user/user.routes').then(m => m.USER_ROUTES) },
+    { path: 'task', loadChildren: () => import('./pages/private/task/task.routes').then(m => m.TASK_ROUTES) },
 ];

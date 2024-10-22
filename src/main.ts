@@ -33,9 +33,9 @@ bootstrapApplication(AppComponent, {
     provideHttpClient(withFetch()),
     provideNzConfig(ngZorroConfig),
     provideRouter(routes),
-    provideAnimations(),
+    provideNzI18n(es_ES),
     provideNoopAnimations(),
-    provideNzI18n(es_ES)
+    provideAnimations(),
   ]
 });
 

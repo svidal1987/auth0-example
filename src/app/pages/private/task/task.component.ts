@@ -10,22 +10,21 @@ import { NzCardModule } from 'ng-zorro-antd/card';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NzFlexModule } from 'ng-zorro-antd/flex';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { TaskService } from '../../../service/task.service';
 @Component({
-  selector: 'app-user',
+  selector: 'app-task',
   standalone: true,
   imports: [
     HttpClientModule,
-    RouterLink, RouterLinkActive,
     NzGridModule, NzCardModule, NzTableModule,NzDividerModule,NzIconModule,NzToolTipModule,NzPaginationModule,CommonModule,NzFlexModule],
-  templateUrl: './user.component.html',
-  styleUrl: './user.component.css'
+  templateUrl: './task.component.html',
+  styleUrl: './task.component.css'
 })
-export class UserComponent {
+export class TaskComponent {
   params:any
   paginate:any
   data:any
-  constructor(private service: UserService){
+  constructor(private service: TaskService){
 
 
     this.params = {

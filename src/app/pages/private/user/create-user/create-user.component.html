@@ -1,0 +1,84 @@
+<div class="btn-wrappers" nz-flex nzJustify="center" nzAlign="flex-start">
+
+
+    <div nz-row nzJustify="center">
+
+        <div nz-col nzXs="24" nzMd="24" nzLg="24" nzXl="24">
+            <nz-card nzTitle="Create User" [nzHoverable]="true" [nzActions]="[ actionReturn,actionSave]">
+
+
+                <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+                    <nz-form-item>
+                        <nz-form-label [nzSpan]="7" nzRequired>Fisrtname</nz-form-label>
+                        <nz-form-control [nzSpan]="24" nzHasFeedback nzValidatingTip="Validating..."
+                            [nzErrorTip]="firstErrorTpl">
+                            <input nz-input formControlName="firtname" placeholder="Fistname" />
+                            <ng-template #firstErrorTpl let-control>
+                                @if (control.errors?.['required']) {
+                                Please input your fisrtname!
+                                }
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item>
+                        <nz-form-label [nzSpan]="7" nzRequired>Lastname</nz-form-label>
+                        <nz-form-control [nzSpan]="24" nzHasFeedback nzValidatingTip="Validating..."
+                            [nzErrorTip]="lastErrorTpl">
+                            <input nz-input formControlName="lastname" placeholder="Lastname" />
+                            <ng-template #lastErrorTpl let-control>
+                                @if (control.errors?.['required']) {
+                                Please input your lastname!
+                                }
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+
+                    <nz-form-item>
+                        <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
+                        <nz-form-control [nzSpan]="24" nzHasFeedback [nzErrorTip]="emailErrorTpl">
+                            <input nz-input formControlName="email" placeholder="email" type="email" />
+                            <ng-template #emailErrorTpl let-control>
+                                @if (control.errors?.['email']) {
+                                The input is not valid E-mail!
+                                }
+                                @if (control.errors?.['required']) {
+                                Please input your E-mail!
+                                }
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+
+                    <nz-form-item>
+                        <nz-form-label [nzSpan]="7" nzRequired>Domicilio</nz-form-label>
+                        <nz-form-control [nzSpan]="24" nzHasFeedback nzValidatingTip="Validating..."
+                            [nzErrorTip]="domErrorTpl">
+                            <input nz-input formControlName="domicilio" placeholder="Domicilio" />
+                            <ng-template #domErrorTpl let-control>
+                                @if (control.errors?.['required']) {
+                                Please input your domicilio!
+                                }
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                </form>
+
+
+
+            </nz-card>
+
+
+
+            <ng-template #actionSave>
+                <a nz-button nzType="link" (click)="submitForm()" [disabled]="!validateForm.valid" type="submit">Save <span nz-icon nzType="send" nzTheme="outline"></span></a>
+            </ng-template>
+            <ng-template #actionReturn>
+                <a nz-button nzType="link" (click)="back()"><span nz-icon nzType="left" nzTheme="outline"></span> Back</a>
+            </ng-template>
+        </div>
+    </div>
+
+</div>

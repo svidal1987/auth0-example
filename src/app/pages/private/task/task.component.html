@@ -4,19 +4,20 @@
         <div nz-row nzJustify="center">
 
             <div nz-col nzXs="24" nzMd="24" nzLg="24" nzXl="18">
-                <nz-card nzTitle="User" [nzHoverable]="true">
+                <nz-card nzTitle="Task" [nzHoverable]="true">
                 
 
                 <nz-table #fixedTable [nzData]="data" [nzFrontPagination]="false" [nzShowPagination]="false">
                     <thead>
                         <tr>
                             <th nzLeft>ID</th>
-                            <th nzLeft>Fisrtname</th>
+                            <th nzLeft>Name</th>
 
-                            <th nzLeft>Lastname</th>
+                            <th nzLeft>Description</th>
+                            <th nzLeft>User</th>
 
                             <th nzRight>
-                                <a nz-button nzType="link" nzTooltipTitle="Crear" nzTooltipPlacement="top" nz-tooltip routerLink="create">
+                                <a nz-button nzType="link" nzTooltipTitle="Crear" nzTooltipPlacement="top" nz-tooltip>
                                     <span nz-icon nzType="plus-circle" nzTheme="outline"></span>
                                 </a>
                             </th>
@@ -27,8 +28,9 @@
                         @for (data of data; track data._id) {
                         <tr>
                             <td nzLeft> {{data._id }}</td>
-                            <td nzLeft> {{data.firtname }}</td>
-                            <td nzLeft> {{data.lastname }}</td>
+                            <td nzLeft> {{data.name }}</td>
+                            <td nzLeft> {{data.description }}</td>
+                            <td nzLeft> {{data.user.lastname }}</td>
                             <td nzRight>
                                 <a nz-button nzType="link" nzTooltipTitle="Editar" nzTooltipPlacement="top" nz-tooltip>
                                     <span nz-icon nzType="edit" nzTheme="outline"></span>
